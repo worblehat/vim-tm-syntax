@@ -9,6 +9,7 @@ Highlighted elements are:
 
 * headings (`# ...`)
 * lists (`*`, `-`, `1.`)
+* inlinde code (`` `...` ``)
 * code blocks (`> ...`)
 * links (`https://...`)
 * emphasized words (`*...*`)

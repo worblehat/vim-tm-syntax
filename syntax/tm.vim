@@ -2,7 +2,7 @@
 " Language:     tm
 " Maintainer:   Tobias Marquardt
 " Filenames:    *.tm
-" Last Change:  2023 Jan 29
+" Last Change:  2023 Sep 21
 
 if exists("b:current_syntax")
   finish
@@ -15,6 +15,7 @@ sy match tmOption "<\S\+>"
 sy match tmUnorderedListItem "^\s*\(*\|-\)\s" contains=tmNote,tmURI,tmOption,tmHighlight
 sy match tmOrderedListItem "^\s*\d\+\.\s" contains=tmNote,tmURI,tmOption,tmHighlight
 sy region tmHighlight matchgroup=tmHighlightDelimiter start="\*\S\@=" end="\S\@<=\*" oneline
+sy region tmCodeInline matchgroup=tmInlineDelimiter start="\`\S\@=" end="\S\@<=\`" oneline
 sy region tmCodeBlock matchgroup=tmCodeBlockDelimiter start="^\s*>\s" end="$" oneline
   \ contains=tmURI,tmOption
 
@@ -28,6 +29,8 @@ hi def link tmUnorderedListItem Comment
 hi def link tmOrderedListItem Comment
 hi def link tmCodeBlock Statement
 hi def link tmCodeBlockDelimiter Comment
+hi def link tmCodeInline Statement
+hi def link tmCodeInlineDelimiter Comment
 
 let b:current_syntax = "tm"
 
