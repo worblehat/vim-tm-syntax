@@ -2,7 +2,7 @@
 " Language:     tm
 " Maintainer:   Tobias Marquardt
 " Filenames:    *.tm
-" Last Change:  2023 Sep 21
+" Last Change:  2024 Mar 22
 
 if exists("b:current_syntax")
   finish
@@ -17,7 +17,8 @@ sy match tmOrderedListItem "^\s*\d\+\.\s" contains=tmNote,tmURI,tmOption,tmHighl
 sy region tmHighlight matchgroup=tmHighlightDelimiter start="\*\S\@=" end="\S\@<=\*" oneline
 sy region tmCodeInline matchgroup=tmInlineDelimiter start="\`\S\@=" end="\S\@<=\`" oneline
 sy region tmCodeBlock matchgroup=tmCodeBlockDelimiter start="^\s*>\s" end="$" oneline
-  \ contains=tmURI,tmOption
+  \ contains=tmURI,tmOption,tmCodeBlockComment
+sy match tmCodeBlockComment " \(#\|//\).*$" contained
 
 hi def link tmHeading Title
 hi def link tmNote Todo
@@ -29,6 +30,7 @@ hi def link tmUnorderedListItem Comment
 hi def link tmOrderedListItem Comment
 hi def link tmCodeBlock Statement
 hi def link tmCodeBlockDelimiter Comment
+hi def link tmCodeBlockComment Comment
 hi def link tmCodeInline Statement
 hi def link tmCodeInlineDelimiter Comment
 

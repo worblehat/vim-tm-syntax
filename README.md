@@ -9,9 +9,11 @@ Highlighted elements are:
 
 * headings (`# ...`)
 * lists (`*`, `-`, `1.`)
-* inlinde code (`` `...` ``)
+* inlined code (`` `...` ``)
 * code blocks (`> ...`)
+* inline comments in code blocks (`#...`, `//...`)
 * links (`https://...`)
 * emphasized words (`*...*`)
 * special words (`TODO`, `FIXME`, `NOTE`)
+* options (`<...>`)
 
